@@ -31,3 +31,57 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   } //27.2046° N, 77.4977° E
 }
+
+
+
+
+import 'package:flutter/material.dart';
+
+class MyChat extends StatefulWidget {
+  @override
+  _MyChatState createState() => _MyChatState();
+}
+
+class _MyChatState extends State<MyChat> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("chat"),
+          actions: [],
+        ),
+        body: Container(
+          color: Colors.black,
+          padding: EdgeInsets.all(30),
+          child: Container(
+            color: Colors.grey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  height: 10,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                      suffixIcon: Icon(Icons.send),
+                      enabled: true,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide:
+                              BorderSide(color: Colors.black, width: 50))),
+                ),
+                RaisedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "map");
+                  },
+                  child: Text("GET LOCATION"),
+                )
+              ],
+            ),
+          ),
+        ) // FloatingActionButton(
+        //elevation: 50,
+        //onPressed: () => Navigator.pushNamed(context, "map"),
+        );
+  }
+}
